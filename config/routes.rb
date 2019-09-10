@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'todos/:id/edit', to: 'todos#edit', as: 'edit'
   patch 'todos/:id', to: 'todos#update', as: :todo
   delete 'todos/:id', to: 'todos#destroy'
-  patch 'todos/:id/completed', to: 'completed_todos#completed', as: 'completed'
-  # Método Patch para poder modificar completed como se desee
+  get 'todos/:id/completed', to: 'completed_todos#completed', as: 'completed'
+
   root 'todos#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

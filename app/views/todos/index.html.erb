@@ -22,9 +22,9 @@
         <h5 class="card-title"><%= todo.description %></h5>
         <p class="card-text">Completed = <%= todo.completed %></p>
         <% if todo.completed == false %>
-          <%= button_to 'Completed?', completed_path(todo), method: :patch, class: 'btn btn-success float-right' %>
+          <%= link_to 'Completed?', completed_path(todo), class: 'btn btn-success float-right' %>
         <%else %>
-          <%= button_to 'Incomplete?', completed_path(todo), method: :patch, class: 'btn btn-danger float-right' %>
+          <%= link_to 'Incomplete?', completed_path(todo), class: 'btn btn-warning float-right' %>
         <% end %>
       </div>
     </div>
