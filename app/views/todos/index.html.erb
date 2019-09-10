@@ -1,0 +1,10 @@
+<div class="container">
+  <br>
+  <% @todos.each do |todo| %>
+  <div class="card bg-primary text-white text-center">
+  <p><%= todo.description %> /
+  <%= todo.completed %></p>
+  </div>
+  <br>
+<% end %>
+</div>
