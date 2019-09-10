@@ -1,13 +1,2 @@
-<br>
-<%= form_with model: @todo, local: true do |f| %>
-  <%= f.label 'Description' %>
-  <%= f.text_field :description %>
 
-  <%= f.label 'Completed?' %>
-  <%= f.check_box :completed %>
-
-  <%= f.submit 'Submit To_do' %>
-
-<% end %>
-<br>
-<%= link_to 'Back', todos_path, class:'btn btn-primary'  %>
+<%= render 'form', todo: @todo %>

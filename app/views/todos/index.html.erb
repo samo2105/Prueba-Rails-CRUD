@@ -1,16 +1,36 @@
 <div class="container">
   <br>
-  <%= link_to 'New To_do', todos_new_path, class: 'btn btn-success' %>
+  <%= link_to 'New To_do', todos_new_path, class: 'btn btn-success container' %>
   <br>
   <br>
   <% @todos.each do |todo| %>
-  <div class="card bg-warning text-center">
-    <p><%= todo.description %> /
-    <%= todo.completed %>
-    <%= link_to 'Show', todo %>
-    <%= link_to 'Edit', edit_path(todo) %>
-    <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'Are you sure you want to delete this To_Do?'}  %></p>
+    <div class="card">
+      <div class="card-header">
+        Created <%= time_ago_in_words todo.created_at %> ago
+        <div class="dropdown float-right">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= link_to 'Show', todo, class: 'btn btn-primary dropdown-item' %>
+            <%= link_to 'Edit', edit_path(todo), class: 'btn btn-warning dropdown-item' %>
+            <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'Are you sure you want to delete this To_Do?'}, class: 'btn btn-danger dropdown-item'  %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= todo.description %></h5>
+        <p class="card-text">Completed = <%= todo.completed %></p>
+        <% if todo.completed == false %>
+          <%= button_to 'Completed?', completed_path(todo), method: :patch, class: 'btn btn-success float-right' %>
+        <%else %>
+          <%= button_to 'Incomplete?', completed_path(todo), method: :patch, class: 'btn btn-danger float-right' %>
+        <% end %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+
   </div>
   <br>
-<% end %>
-</div>
+

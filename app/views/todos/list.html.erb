@@ -1,0 +1,33 @@
+<div class="container">
+  <br>
+  <div class="row">
+
+    <div class='column col-sm-6'>
+      <h2 class="text-center"> Incompleted Todos</h2>
+      <% @t_incomplete.each do |todo| %>
+        <div class="card bg-warning text-center">
+        <p> <%= todo.description %> / <%= todo.completed %></p>
+          <div class="card-footer pt-0 pb-0 text-right">
+            <small>Created <%= time_ago_in_words todo.created_at %> ago</small>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+
+    <div class='column col-sm-6'>
+      <h2 class="text-center"> Completed Todos</h2>
+      <% @t_completed.each do |todo| %>
+        <div class="card bg-success text-center text-white">
+          <p> <%= todo.description %> / <%= todo.completed %></p>
+          <div class="card-footer pt-0 pb-0 text-right">
+            <small>Created <%= time_ago_in_words todo.created_at %> ago</small>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+

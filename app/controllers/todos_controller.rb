@@ -28,6 +28,11 @@ class TodosController < ApplicationController
     @todo.destroy
     redirect_to todos_path
   end
+  # Asignación de dos variables para mejor desempeño
+  def list
+    @t_completed = Todo.where(completed: true)
+    @t_incomplete = Todo.where(completed: false)
+  end
 
   private
   def todo_params
