@@ -1,6 +1,6 @@
 class CompletedTodosController < ApplicationController
 
-  def completed
+  def update
     @todo = Todo.find(params[:id])
 
     if @todo.completed?
