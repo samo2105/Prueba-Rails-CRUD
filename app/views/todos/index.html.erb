@@ -1,9 +1,10 @@
 <div class="container">
-
-  <%= link_to 'New To_do', todos_new_path %>
+  <br>
+  <%= link_to 'New To_do', todos_new_path, class: 'btn btn-success' %>
+  <br>
   <br>
   <% @todos.each do |todo| %>
-  <div class="card bg-primary text-white text-center">
+  <div class="card bg-warning text-center col-sm-6">
   <p><%= todo.description %> /
   <%= todo.completed %></p>
   </div>
