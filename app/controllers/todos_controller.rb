@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :todo_find, only: [:show]
+  before_action :todo_find, only: [:show, :edit, :update]
 
   def index
     @todos = Todo.all
@@ -16,6 +16,13 @@ class TodosController < ApplicationController
   end
 
   def show; end
+
+  def edit; end
+
+  def update
+    @todo.update(todo_params)
+    redirect_to todos_path
+  end
 
   private
   def todo_params

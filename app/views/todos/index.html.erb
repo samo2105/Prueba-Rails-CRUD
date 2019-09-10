@@ -7,9 +7,9 @@
   <div class="card bg-warning text-center">
     <p><%= todo.description %> /
     <%= todo.completed %>
-    <%= link_to 'Show', show_path(todo) %>
-    <%= link_to 'Delete' %>
-    <%= link_to 'Completed' %></p>
+    <%= link_to 'Show', todo %>
+    <%= link_to 'Edit', edit_path(todo) %>
+    <%= link_to 'Delete' %></p>
   </div>
   <br>
 <% end %>
