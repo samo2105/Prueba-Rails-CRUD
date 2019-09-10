@@ -4,9 +4,12 @@
   <br>
   <br>
   <% @todos.each do |todo| %>
-  <div class="card bg-warning text-center col-sm-6">
-  <p><%= todo.description %> /
-  <%= todo.completed %></p>
+  <div class="card bg-warning text-center">
+    <p><%= todo.description %> /
+    <%= todo.completed %>
+    <%= link_to 'Show', show_path(todo) %>
+    <%= link_to 'Delete' %>
+    <%= link_to 'Completed' %></p>
   </div>
   <br>
 <% end %>

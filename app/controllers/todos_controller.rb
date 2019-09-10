@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :todo_find, only: []
+  before_action :todo_find, only: [:show]
 
   def index
     @todos = Todo.all
@@ -14,6 +14,8 @@ class TodosController < ApplicationController
     @todo.save
     redirect_to todos_path
   end
+
+  def show; end
 
   private
   def todo_params
